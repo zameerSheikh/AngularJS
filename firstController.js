@@ -5,13 +5,15 @@ testApp.controller('Firstctrl', firstctrl);
 firstctrl.$inject = [
     '$scope',
     'MainService',
-    '$uibModal'
+    '$uibModal',
+    '$localStorage'
 ];
 
 function firstctrl(
     $scope,
     MainService,
-    $uibModal
+    $uibModal,
+    $localStorage
 ){
     $scope.callService = function(){
         MainService.userData(3).then(function(resp){
@@ -20,6 +22,7 @@ function firstctrl(
             $scope.res = resp;
             $scope.$digest();
         });
+        $localStorage.name = 'From localStorage';
     }
 
     $scope.openModal = function(){

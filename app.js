@@ -1,3 +1,3 @@
 "use strict"
 
-var testApp = angular.module('angApp', ['ui.bootstrap']);
+var testApp = angular.module('angApp', ['ui.bootstrap','ngStorage']);

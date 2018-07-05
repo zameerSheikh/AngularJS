@@ -4,18 +4,26 @@ testApp.controller('ModalController', modalController);
 
 modalController.$inject = [
     '$scope',
-    '$uibModalInstance'
+    '$uibModalInstance',
+    'MainService',
+    '$localStorage'
 ];
 
 function modalController(
     $scope,
-    $uibModalInstance
+    $uibModalInstance,
+    MainService,
+    $localStorage
 ){
-    $scope.ok = function(){
-        $uibModalInstance.close('clicked OK');
+    $scope.ok = function(n){
+        MainService.userData(n).then(function(resp){
+            $uibModalInstance.close(resp);
+        }).catch();
     };
 
+    $scope.myName = $localStorage.name;
+    
     $scope.cancel = function(){
         $uibModalInstance.dismiss('clicked cancel');
-    }
+    };
 }
