@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Angular JS</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- <link rel="stylesheet" href="bootstrap.min.css"> -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.7.2/angular.min.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-animate.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
+    <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body ng-app="angApp">
+
+    <div ng-controller="Firstctrl">
+        <button ng-click="callService()">call service</button>
+        <p>{{res}}</p>
+        <button ng-click="openModal()">open modal</button>
+    </div>
+
+    <div ng-controller="Secondctrl">
+
+    </div>
+<script src="app.js"></script>
+<script src="services.js"></script>
+<script src="firstController.js"></script>
+<script src="secondController.js"></script>
+<script src="modalcontroller.js"></script>
+</body>
+</html>
