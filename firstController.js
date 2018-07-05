@@ -36,5 +36,16 @@ function firstctrl(
         }, function(err){
             console.log(err,'error');
         });
-    }
+    };
+
+    $scope.weather = {};
+    $scope.fetchWeather = function(place){
+        MainService.getWeather(place).then(function(weatherData){
+            console.log(weatherData);
+            $scope.weather.humidity = weatherData.data.main.humidity;
+            $scope.weather.temp = weatherData.data.main.temp;
+        }).catch(function(err){
+            console.log(err);
+        });
+    };
 }
