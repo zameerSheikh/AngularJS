@@ -6,14 +6,16 @@ firstctrl.$inject = [
     '$scope',
     'MainService',
     '$uibModal',
-    '$localStorage'
+    '$localStorage',
+    'someData'
 ];
 
 function firstctrl(
     $scope,
     MainService,
     $uibModal,
-    $localStorage
+    $localStorage,
+    someData
 ){
     console.log(window.angular);
     $scope.callService = function(){
@@ -50,18 +52,7 @@ function firstctrl(
         });
     };
 
-    $scope.tempRecords = [34,45,56,67,78,'dfdf','sdfsdfsd',44,22,11,'zameer','iviswa','anas',
-                        'asiyah',
-                        'asim',
-                        'some',
-                        'other',
-                        43,32,21,76, 34,45,56,67,78,'dfdf','sdfsdfsd',44,22,11,'zameer','iviswa','anas',
-                        'asiyah',
-                        'asim',
-                        'some',
-                        'other',
-
-                    ];
+    $scope.tempRecords = someData;
 
     $scope.records = $scope.tempRecords.slice(0,6);
 
