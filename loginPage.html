@@ -1,0 +1,6 @@
+<div class="form-group">
+    <input type="text" ng-model="userName" placeholder="Please enter username"><br><br>
+    <input type="password" ng-model="pwd" placeholder="please enter password"><br><br>
+    <button ng-click="loginUser(userName, pwd);">Login</button>
+    <p ng-if="errorMsg !== ''" style="color: red;">{{errorMsg}}</p>
+</div>

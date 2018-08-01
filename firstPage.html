@@ -1,0 +1,22 @@
+<div class="form-group">
+        <button ng-click="callService()">call service</button><br><br>
+        <input type="text" ng-model="locale" class="form-control" placeholder="Enter location"><br>
+        <button type="button" class="btn btn-primary" ng-disabled="!locale" ng-click="fetchWeather(locale)">Get Weather</button>
+        <div ng-show="weather.humidity">
+            Humidity: {{weather.humidity}}
+            Temperature: {{weather.temp}}C
+        </div>
+        <p>{{res}}</p>
+        <button ng-click="openModal()">open modal</button>
+        <div>
+            <ul>
+                <li ng-repeat="data in records track by $index">{{data}}</li>
+            </ul>
+        </div>
+        <div>
+            <ul class="" uib-pagination total-items="tempRecords.length" items-per-page="6" ng-model="pageNum" ng-change="pageChanged(pageNum)"
+                max-size="4" class="pagination-sm" boundary-link-numbers="true"></ul>
+        </div><br>
+
+        <button ng-click="logOut();">Logout</button>
+    </div>

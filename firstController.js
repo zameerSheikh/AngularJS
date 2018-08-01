@@ -7,6 +7,7 @@ firstctrl.$inject = [
     'MainService',
     '$uibModal',
     '$localStorage',
+    '$state',
     'someData'
 ];
 
@@ -15,9 +16,14 @@ function firstctrl(
     MainService,
     $uibModal,
     $localStorage,
+    $state,
     someData
 ){
-    console.log(window.angular);
+    //console.log(window.angular);
+    if(!localStorage.password){
+        console.log('not logged in');
+        $state.go('login');
+    }
     $scope.callService = function(){
         MainService.userData(3).then(function(resp){
             console.log(resp,'resp');
@@ -57,9 +63,14 @@ function firstctrl(
     $scope.records = $scope.tempRecords.slice(0,6);
 
     $scope.pageChanged = function(pageNum){
-        console.log('pageNum: ', pageNum);
+       // console.log('pageNum: ', pageNum);
         var start = (pageNum-1) * 6;
         var end   = start + 6;
         $scope.records = $scope.tempRecords.slice(start,end);
     };
+
+    $scope.logOut = function(){
+        localStorage.clear();
+        $state.go('login');
+    }
 }

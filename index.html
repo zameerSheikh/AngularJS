@@ -11,39 +11,22 @@
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular-sanitize.js"></script>
     <script src="//angular-ui.github.io/bootstrap/ui-bootstrap-tpls-2.5.0.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/ngStorage/0.3.11/ngStorage.min.js"></script>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/angular-ui-router/0.3.2/angular-ui-router.min.js"></script>
     <link href="//netdna.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body ng-app="angApp">
+<div class="container">
+        <div ui-view></div>
+</div>
 
-    <div ng-controller="Firstctrl" class="form-group">
-        <button ng-click="callService()">call service</button><br><br>
-        <input type="text" ng-model="locale" class="form-control" placeholder="Enter location"><br>
-        <button type="button" class="btn btn-primary" ng-disabled="!locale" ng-click="fetchWeather(locale)">Get Weather</button>
-        <div ng-show="weather.humidity">
-            Humidity: {{weather.humidity}}
-            Temperature: {{weather.temp}}C
-        </div>
-        <p>{{res}}</p>
-        <button ng-click="openModal()">open modal</button>
-        <div>
-            <ul>
-                <li ng-repeat="data in records track by $index">{{data}}</li>
-            </ul>
-        </div>
-        <div>
-            <ul class="" uib-pagination total-items="tempRecords.length" items-per-page="6" ng-model="pageNum" ng-change="pageChanged(pageNum)"
-                max-size="4" class="pagination-sm" boundary-link-numbers="true"></ul>
-        </div>
-    </div>
 
-    <div ng-controller="Secondctrl">
-
-    </div>
 <script src="app.js"></script>
+<script src="app.config.js"></script>
 <script src="services.js"></script>
 <script src="firstController.js"></script>
 <script src="secondController.js"></script>
 <script src="modalcontroller.js"></script>
 <script src="app.constants.js"></script>
+<script src="loginController.js"></script>
 </body>
 </html>
