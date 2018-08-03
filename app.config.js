@@ -4,12 +4,16 @@ testApp.config(appConfig);
 
 appConfig.$inject = [
     '$stateProvider',
-    '$urlRouterProvider'
+    '$urlRouterProvider',
+    '$locationProvider',
+    '$urlMatcherFactoryProvider'
 ];
 
 function appConfig(
     $stateProvider,
-    $urlRouterProvider
+    $urlRouterProvider,
+    $locationProvider,
+    $urlMatcherFactoryProvider
 ){
     $urlRouterProvider.otherwise('/login');
 
@@ -25,5 +29,20 @@ function appConfig(
         url          : '/firstPage',
         templateUrl  : 'firstPage.html',
         controller   : 'Firstctrl'
+    })
+
+    .state('second',{
+        url          : '/secondPage',
+        templateUrl  : 'secondPage.html',
+        controller   : 'SecondCtrl'
+    })
+
+    .state('third',{
+        url          : '/thirdPage',
+        templateUrl  : 'thirdPage.html',
+        controller   : 'ThirdCtrl'
     });
+
+    $locationProvider.html5Mode(true);
+    $urlMatcherFactoryProvider.strictMode(false);
 }

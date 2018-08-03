@@ -32,5 +32,12 @@ function loginCtrl(
                 $scope.errorMsg = '';
             },2000);
         }
+    };
+
+    
+    $scope.loginOnEnter = function(e){
+        if(e.keyCode == 13){
+            $scope.loginUser($scope.userName, $scope.pwd);
+        }
     }
 }
