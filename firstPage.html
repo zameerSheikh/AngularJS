@@ -11,7 +11,7 @@
         <button ng-click="openModal()">open modal</button>
         <div>
             <ul>
-                <li ng-repeat="data in records track by $index">{{data}}</li>
+                <li ng-repeat="data in records track by $index">{{data | ordinal}}</li>
             </ul>
         </div>
         <div>
