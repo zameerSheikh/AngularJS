@@ -8,7 +8,8 @@ firstctrl.$inject = [
     '$uibModal',
     '$localStorage',
     '$state',
-    'someData'
+    'someData',
+    '$timeout'
 ];
 
 function firstctrl(
@@ -17,7 +18,8 @@ function firstctrl(
     $uibModal,
     $localStorage,
     $state,
-    someData
+    someData,
+    $timeout
 ){
     //console.log(window.angular);
     if(!localStorage.password){
@@ -47,14 +49,21 @@ function firstctrl(
         });
     };
 
-    $scope.weather = {};
+    $scope.weather = {
+        isLoading : false
+    };
     $scope.fetchWeather = function(place){
+            $scope.weather.isLoading = true;
         MainService.getWeather(place).then(function(weatherData){
             console.log(weatherData);
+            $timeout(function(){
+                $scope.weather.isLoading = false;
             $scope.weather.humidity = weatherData.data.main.humidity;
             $scope.weather.temp = weatherData.data.main.temp;
+            },2000);
         }).catch(function(err){
             console.log(err);
+            $scope.weather.isLoading = false;
         });
     };
 

@@ -43,6 +43,6 @@ function appConfig(
         controller   : 'ThirdCtrl'
     });
 
-    $locationProvider.html5Mode(true);
-    $urlMatcherFactoryProvider.strictMode(false);
+    //$locationProvider.html5Mode(true);
+    //$urlMatcherFactoryProvider.strictMode(false);
 }
