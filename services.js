@@ -34,24 +34,43 @@ function mainservice(
     };
     
     function getWeather(location){
-        var q = $q.defer();
-        var request = $http({
-            url: 'https://api.openweathermap.org/data/2.5/weather?q='+ location + '&units=metric&APPID=7def8a09921c79c4e299403b906fd961',
-            method: 'GET'
+        // var q = $q.defer();
+        // var request = $http({
+        //     url: 'https://api.openweathermap.org/data/2.5/weather?q='+ location + '&units=metric&APPID=7def8a09921c79c4e299403b906fd961',
+        //     method: 'GET'
+        // });
+
+        // request.then(getWeatherSuccess).catch(getWeatherError);
+
+        // function getWeatherSuccess(response){
+        //     console.log(response,'response');
+        //     q.resolve(response);
+        // };
+
+        // function getWeatherError(reason){
+        //     console.log(reason,'reason');
+        //     q.reject(reason);
+        // };
+
+        // return q.promise;
+
+        return new Promise(function(resolve, reject){
+            var request = $http({
+                    url: 'https://api.openweathermap.org/data/2.5/weather?q='+ location + '&units=metric&APPID=7def8a09921c79c4e299403b906fd961',
+                    method: 'GET'
+                });
+
+                request.then(getWeatherSuccess).catch(getWeatherError);
+
+                function getWeatherSuccess(response){
+                    console.log(response,'response');
+                    resolve(response);
+                };
+
+                function getWeatherError(reason){
+                    console.log(reason,'reason');
+                    reject(reason);
+                };
         });
-
-        request.then(getWeatherSuccess).catch(getWeatherError);
-
-        function getWeatherSuccess(response){
-            console.log(response,'response');
-            q.resolve(response);
-        };
-
-        function getWeatherError(reason){
-            console.log(reason,'reason');
-            q.reject(reason);
-        };
-
-        return q.promise;
     };
 }
