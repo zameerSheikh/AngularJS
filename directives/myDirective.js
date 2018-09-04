@@ -1,6 +1,6 @@
-"use strict";
-
 (function(){
+
+    "use strict";
 
     var firstDirective = function (){
         return {
@@ -24,4 +24,4 @@
     
     testApp.directive('firstDirective', firstDirective);
     
-})();
+}());

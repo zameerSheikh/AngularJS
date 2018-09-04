@@ -1,4 +1,5 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.controller('SecondCtrl', secondCtrl);
 
@@ -19,8 +20,9 @@ function secondCtrl(
         localData: []
     };
 
-        function pushData(name){
+        function pushData(){
         console.log('innn');
-        $scope.second.localData.push('pushed from:' + name)
+        $scope.second.localData.push('from second controller..!');
     }
 }
+}());

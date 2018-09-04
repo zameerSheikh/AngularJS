@@ -1,11 +1,12 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.filter('ordinal', ordinal);
 
 function ordinal(){
     return function(inputNumber){
         if(isNaN(inputNumber)){
-            return inputNumber + 'input is not a number..'
+            return inputNumber;
         }else{
             var lastDigit = inputNumber%10;
 
@@ -20,4 +21,5 @@ function ordinal(){
             }
         }
     };
-};
+}
+}());

@@ -1,4 +1,5 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.factory('MainService', mainservice);
 
@@ -30,7 +31,7 @@ function mainservice(
     };
 
     function getDetails(){
-        return
+        return;
     };
     
     function getWeather(location){
@@ -65,12 +66,13 @@ function mainservice(
                 function getWeatherSuccess(response){
                     console.log(response,'response');
                     resolve(response);
-                };
+                }
 
                 function getWeatherError(reason){
                     console.log(reason,'reason');
                     reject(reason);
-                };
+                }
         });
-    };
+    }
 }
+}());
