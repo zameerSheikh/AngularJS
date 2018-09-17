@@ -1,3 +1,5 @@
-"use strict";
+(function(){
+    "use strict";
 
-var testApp = angular.module('angApp', ['ui.bootstrap','ngStorage','ui.router']);
+window.testApp = angular.module('angApp', ['ui.bootstrap','ngStorage','ui.router']);
+}());

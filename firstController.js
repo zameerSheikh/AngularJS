@@ -1,4 +1,5 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.controller('Firstctrl', firstctrl);
 
@@ -83,3 +84,4 @@ function firstctrl(
         $state.go('login');
     }
 }
+}());

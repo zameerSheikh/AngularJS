@@ -1,4 +1,5 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.controller('ModalController', modalController);
 
@@ -27,3 +28,4 @@ function modalController(
         $uibModalInstance.dismiss('clicked cancel');
     };
 }
+}());

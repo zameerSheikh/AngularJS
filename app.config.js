@@ -1,4 +1,5 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.config(appConfig);
 
@@ -46,3 +47,4 @@ function appConfig(
     //$locationProvider.html5Mode(true);
     //$urlMatcherFactoryProvider.strictMode(false);
 }
+}());
