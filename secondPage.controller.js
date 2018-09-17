@@ -20,9 +20,9 @@ function secondCtrl(
         localData: []
     };
 
-        function pushData(){
+        function pushData(data){
         console.log('innn');
-        $scope.second.localData.push('from second controller..!');
+        $scope.second.localData.push(data);
     }
 }
 }());
