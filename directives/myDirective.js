@@ -12,7 +12,7 @@
             template: `<h3>From a custom directive..{{second.name}}</h3>
                         <span>{{data}}</span>
                         <button ng-click="addData()">Add Data</button>`,
-            controller: function($scope){
+            link: function($scope){
                 console.log('$scope: ', $scope);
                 $scope.addData = function(){
                     console.log('added new data');
