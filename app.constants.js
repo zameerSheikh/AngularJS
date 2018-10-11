@@ -1,4 +1,5 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.constant('someData', [
     34,
@@ -40,3 +41,4 @@ testApp.constant('someData', [
     'some',
     'other',
 ]);
+}());

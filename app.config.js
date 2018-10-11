@@ -39,7 +39,7 @@ function appConfig(
     })
 
     .state('third',{
-        url          : '/thirdPage',
+        url          : '/thirdPage/:a/:b',
         templateUrl  : 'thirdPage.html',
         controller   : 'ThirdCtrl'
     });

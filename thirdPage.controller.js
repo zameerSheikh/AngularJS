@@ -1,13 +1,18 @@
-"use strict"
+(function(){
+    "use strict";
 
 testApp.controller('ThirdCtrl', thirdCtrl);
 
 thirdCtrl.$inject = [
-    '$scope'
+    '$scope',
+    '$stateParams'
 ];
 
 function thirdCtrl(
-    $scope
+    $scope,
+    $stateParams
 ){
-
+    $scope.firstParam = $stateParams.a;
+    $scope.secondParam = $stateParams.b;
 }
+}());
