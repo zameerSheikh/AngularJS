@@ -2,3 +2,25 @@
 
 
 <div first-directive class="some" data="second.localData" func="second.pushData(da)"></div>
+<br><br>
+<form name="uploadImagesForm">
+    <div class="image-preview-wrapper preview-img-md-wrapper">
+        <img src="{{ second.croppedImg}}" alt="Image" width="100px" height="100px"/>
+    </div>
+    <div style="margin-top:20px;">
+        <div ngf-select="second.uploadingFiles($file, $invalidFiles)" ng-model="second.originalImg" ngf-multiple="false" ngf-accept="'image/*'" ngf-pattern="'.jpg,.jpeg,.png'" ngf-max-size="5MB">
+            <span>
+                    Click here to upload image
+            </span>
+        </div>
+        <div class="cropArea">
+            <img-crop image="second.files" result-image="second.croppedImg" result-image-size="100"></img-crop>
+        </div>
+        <div class="btn-wrapper text-center">
+            <button type="button" class="btn btn-custom-primary" ng-click="uploadImageManager.uploadSelectedImage()">Select
+                <!-- <engageto-loader-image ng-if="engagetoApp.isLoading"></engageto-loader-image> -->
+            </button>
+            <!-- <button type="button" class="btn btn-delete-primary" ng-click="uploadImageManager.removeSelectedImage()" ng-disabled="!uploadImageManager.isFileSelected">Delete</button> -->
+        </div>
+    </div>
+</form>

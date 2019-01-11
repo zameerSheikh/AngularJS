@@ -13,7 +13,7 @@
                         <span>{{data}}</span>
                         <button ng-click="func({da: 'From Directive'})">Add Data</button>`,
             link: function(scope, elem, attrs){
-                console.log('$scope: ', scope, elem);
+                // console.log('$scope: ', scope, elem);
                 // elem.css("background-color", "lightyellow");
             }
         }
